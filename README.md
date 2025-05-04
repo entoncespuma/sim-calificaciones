@@ -25,4 +25,4 @@ Una aplicación web simple, sobria y efectiva para calcular promedios académico
 
 ```bash
 git clone https://github.com/entoncespuma/sim-calificaciones.git
-cd simulador-promedios
+cd sim-calificaciones
