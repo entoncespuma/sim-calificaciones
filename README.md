@@ -19,7 +19,7 @@ Una aplicación web simple, sobria y efectiva para calcular promedios académico
 
 ## 🌐 Proyecto en vivo
 
-👉 [Ver proyecto en GitHub Pages](https://github.com/entoncespuma/sim-calificaciones/) <!-- Reemplaza con tu usuario real -->
+👉 [Ver proyecto en GitHub Pages](https://github.com/entoncespuma/sim-calificaciones/)
 
 ## 📁 Cómo clonar este repositorio
 
