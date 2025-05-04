@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Notas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Arial&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Simulador de Notas Escolares</h1>
+    <form id="notasForm">
+      <label for="examen">Nota del Examen:</label>
+      <input type="number" id="examen" min="0" max="10" step="0.1" required>
+
+      <label for="tarea">Nota de la Tarea:</label>
+      <input type="number" id="tarea" min="0" max="10" step="0.1" required>
+
+      <label for="proyecto">Nota del Proyecto:</label>
+      <input type="number" id="proyecto" min="0" max="10" step="0.1" required>
+
+      <label for="participacion">Nota de Participación:</label>
+      <input type="number" id="participacion" min="0" max="10" step="0.1">
+
+      <button type="submit">Calcular Promedio</button>
+    </form>
+
+    <div id="resultado" class="resultado">
+      <p>Promedio: <span id="promedio"></span></p>
+      <p>Nota Final: <span id="notaFinal"></span></p>
+      <p>Escala: <span id="escala"></span></p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('notasForm');
+    const promedioSpan = document.getElementById('promedio');
+    const notaFinalSpan = document.getElementById('notaFinal');
+    const escalaSpan = document.getElementById('escala');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const examen = parseFloat(document.getElementById('examen').value);
+      const tarea = parseFloat(document.getElementById('tarea').value);
+      const proyecto = parseFloat(document.getElementById('proyecto').value);
+      const participacion = parseFloat(document.getElementById('participacion').value) || 0;
+
+      const promedio = (examen + tarea + proyecto + participacion) / 4;
+      promedioSpan.textContent = promedio.toFixed(2);
+
+      let notaFinal = '';
+      if (promedio >= 9) notaFinal = 'Excelente';
+      else if (promedio >= 7) notaFinal = 'Bueno';
+      else if (promedio >= 5) notaFinal = 'Regular';
+      else notaFinal = 'Insuficiente';
+
+      notaFinalSpan.textContent = notaFinal;
+
+      const escala = `0-4: Insuficiente, 5-6: Regular, 7-8: Bueno, 9-10: Excelente`;
+      escalaSpan.textContent = escala;
+    });
+  </script>
+</body>
+</html>
